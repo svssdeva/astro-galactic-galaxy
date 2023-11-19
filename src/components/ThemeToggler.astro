@@ -51,6 +51,7 @@
 <script>
     /** Represent the local storage property key by a variable */
     const COLOUR_MODE = "COLOUR_MODE";
+
     /** Represent the local storage property values by variables */
     const LIGHT_THEME = "LIGHT";
     const DARK_THEME = "DARK";
@@ -62,12 +63,6 @@
     const toggle = document.querySelector("[data-theme-toggle]");
     /** Grab the document root element. In this case <html>  */
     const rootEl = document.documentElement;
-
-    /** added persistence to theme by picking up color from local storage **/
-    const storedColor = window.localStorage.getItem(COLOUR_MODE) || 'LIGHT';
-    if (storedColor === DARK_THEME) {
-        rootEl.classList.toggle(DARK_THEME_CLASS);
-    }
 
     if (toggle) {
         toggle.addEventListener("click", () => {
